@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twisted Grains Woodworking | Custom Handmade Wood Furniture &amp; Decor | Phoenixville, PA</title>
+<meta name="description" content="Twisted Grains Woodworking crafts one-of-a-kind, handmade furniture and decor from live-edge and reclaimed wood. Visit our shop in Phoenixville, PA.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1510;
+    --walnut: #4a2f20;
+    --wood: #9a6a3e;
+    --sand: #cfa876;
+    --cream: #f6f1e9;
+    --paper: #fcfaf6;
+    --line: #e7dfd1;
+    --muted: #6b5c4a;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; }
+
+  svg { display: block; }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Contact bar */
+  .topbar {
+    background: var(--ink);
+    color: #cdbda8;
+    font-size: 0.82rem;
+  }
+
+  .topbar .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .topbar-info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .topbar-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    color: #cdbda8;
+    white-space: nowrap;
+  }
+
+  .topbar-item svg { width: 14px; height: 14px; flex: none; opacity: 0.85; }
+
+  .topbar-item:hover { color: var(--sand); }
+
+  .topbar-social {
+    display: flex;
+    gap: 16px;
+  }
+
+  .topbar-social a {
+    color: #cdbda8;
+    text-decoration: none;
+  }
+
+  .topbar-social a:hover { color: var(--sand); }
+
+  .topbar-social svg { width: 15px; height: 15px; }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(252, 250, 246, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--ink);
+    font-family: var(--serif);
+    line-height: 1.1;
+  }
+
+  .brand img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    flex: none;
+    border: 1px solid var(--line);
+    box-shadow: 0 1px 4px rgba(28,21,16,0.1);
+  }
+
+  footer .brand img {
+    width: 54px;
+    height: 54px;
+    border-color: rgba(205,189,168,0.35);
+  }
+
+  .brand .mark {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .brand .sub {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: var(--wood);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  nav.main ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+  }
+
+  nav.main a {
+    text-decoration: none;
+    font-size: 0.88rem;
+    letter-spacing: 0.3px;
+    color: var(--ink);
+  }
+
+  nav.main a:hover { color: var(--wood); }
+
+  .nav-link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .nav-link-arrow svg { width: 14px; height: 14px; transition: transform 0.2s ease; }
+  .nav-link-arrow:hover svg { transform: translateX(3px); }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: flex-end;
+    color: var(--cream);
+    overflow: hidden;
+  }
+
+  .hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(14,9,6,0.88) 0%, rgba(14,9,6,0.25) 55%, rgba(14,9,6,0.45) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px 88px;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    color: var(--sand);
+    margin-bottom: 22px;
+  }
+
+  .hero-eyebrow::before {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background: var(--sand);
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    line-height: 1.05;
+    max-width: 850px;
+    margin-bottom: 26px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--sand);
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 480px;
+    color: var(--cream);
+    opacity: 0.85;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .btn-primary {
+    background: var(--cream);
+    color: var(--ink);
+  }
+
+  .btn-primary:hover { background: var(--sand); }
+
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    color: var(--cream);
+    font-size: 0.85rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(246,241,233,0.4);
+    padding-bottom: 4px;
+  }
+
+  .link-arrow svg { width: 15px; height: 15px; transition: transform 0.2s ease; }
+  .link-arrow:hover svg { transform: translateX(4px); }
+  .link-arrow:hover { border-color: var(--cream); }
+
+  /* Section generic */
+  section { padding: 120px 0; }
+
+  .section-head {
+    max-width: 640px;
+    margin: 0 0 64px;
+  }
+
+  .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--wood);
+    margin-bottom: 18px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--wood);
+  }
+
+  .section-head.center .eyebrow { justify-content: center; }
+  .section-head.center .eyebrow::before { display: none; }
+
+  .section-head h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 3.6vw, 2.8rem);
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+
+  .section-head p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    font-weight: 300;
+  }
+
+  /* About */
+  .about { background: var(--cream); }
+
+  .about .wrap {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-copy p {
+    color: var(--muted);
+    margin-bottom: 18px;
+    font-size: 1.02rem;
+    font-weight: 300;
+  }
+
+  .about-img { position: relative; }
+
+  .about-img img { width: 100%; }
+
+  .about-stats {
+    display: flex;
+    margin-top: 36px;
+  }
+
+  .stat {
+    padding-right: 32px;
+    margin-right: 32px;
+    border-right: 1px solid var(--line);
+  }
+
+  .stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+
+  .stat strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: var(--walnut);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat span {
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .gallery-grid figure {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: #ddd;
+  }
+
+  .gallery-grid figure:nth-child(4),
+  .gallery-grid figure:nth-child(7) {
+    aspect-ratio: 4/3;
+    grid-column: span 2;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(.2,.8,.2,1), filter 0.4s ease;
+    filter: saturate(0.94);
+  }
+
+  .gallery-grid figure:hover img {
+    transform: scale(1.045);
+    filter: saturate(1.05);
+  }
+
+  .gallery-grid figcaption {
+    position: absolute;
+    left: 20px; bottom: 18px;
+    color: var(--cream);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.35s ease;
+  }
+
+  .gallery-grid figure::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(14,9,6,0.65), rgba(14,9,6,0) 45%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .gallery-grid figure:hover::after { opacity: 1; }
+  .gallery-grid figure:hover figcaption { opacity: 1; transform: translateY(0); }
+
+  .gallery-note {
+    margin-top: 44px;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+
+  .gallery-note a {
+    color: var(--walnut);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Wood divider */
+  .divider {
+    position: relative;
+    height: clamp(130px, 20vw, 220px);
+    padding: 0;
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .divider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    filter: saturate(0.92) contrast(1.04);
+  }
+
+  /* Process strip */
+  .process { background: var(--ink); color: var(--cream); }
+
+  .process .eyebrow { color: var(--sand); }
+  .process .eyebrow::before { background: var(--sand); }
+  .process .section-head p { color: #b9ab98; }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px;
+  }
+
+  .process-item {
+    border-top: 1px solid rgba(207,168,118,0.3);
+    padding-top: 28px;
+  }
+
+  .process-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--sand);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .process-item h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .process-item p {
+    color: #b9ab98;
+    font-size: 0.96rem;
+    font-weight: 300;
+  }
+
+  /* Visit / Contact */
+  .visit { background: var(--paper); }
+
+  .visit .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .visit-details h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .detail-row {
+    display: flex;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: flex-start;
+  }
+
+  .visit-details > .detail-row:first-of-type { border-top: 1px solid var(--line); margin-top: 24px; }
+
+  .detail-icon {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    color: var(--wood);
+    margin-top: 2px;
+  }
+
+  .detail-row h4 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .detail-row p, .detail-row a {
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .detail-row a:hover { color: var(--walnut); }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .hours-table td {
+    padding: 2px 0;
+    font-size: 1rem;
+  }
+
+  .hours-table td:last-child {
+    text-align: right;
+    color: var(--muted);
+  }
+
+  .social-row {
+    display: flex;
+    gap: 28px;
+    margin-top: 32px;
+  }
+
+  .social-row a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.88rem;
+    letter-spacing: 0.3px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 4px;
+  }
+
+  .social-row a:hover { color: var(--walnut); border-color: var(--wood); }
+  .social-row svg { width: 16px; height: 16px; }
+
+  .map-wrap {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    min-height: 360px;
+    filter: grayscale(0.25) contrast(1.02);
+  }
+
+  .map-wrap iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    border: 0;
+    display: block;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: #b9ab98;
+    padding: 56px 0 28px;
+  }
+
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  footer .brand { color: var(--cream); }
+  footer .brand .sub { color: var(--sand); }
+
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    font-size: 0.88rem;
+  }
+
+  .footer-links a { text-decoration: none; color: #b9ab98; }
+  .footer-links a:hover { color: var(--cream); }
+
+  .footer-bottom {
+    text-align: left;
+    font-size: 0.8rem;
+    color: #7d6f5e;
+    margin-top: 48px;
+    border-top: 1px solid rgba(185,171,152,0.15);
+    padding-top: 24px;
+  }
+
+  @media (max-width: 860px) {
+    .topbar-item.hide-mobile { display: none; }
+    nav.main { display: none; }
+    .about .wrap, .visit .wrap { grid-template-columns: 1fr; gap: 48px; }
+    .about-img { order: -1; }
+    .process-grid { grid-template-columns: 1fr; gap: 40px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-grid figure:nth-child(4), .gallery-grid figure:nth-child(7) { grid-column: span 2; }
+    section { padding: 80px 0; }
+  }
+
+  @media (max-width: 520px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-grid figure:nth-child(4), .gallery-grid figure:nth-child(7) { grid-column: span 1; }
+    .hero-buttons { flex-direction: column; align-items: flex-start; gap: 20px; }
+    footer .wrap { flex-direction: column; }
+    .topbar-info { gap: 14px; }
+    .topbar-social { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-info">
+      <a class="topbar-item" href="tel:+16103426412">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (610) 342-6412
+      </a>
+      <a class="topbar-item" href="mailto:hello@twistedgrainswoodworking.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6c0-1.1-.9-2-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6z"/><path d="m2 7 10 6 10-6"/></svg>
+        hello@twistedgrainswoodworking.com
+      </a>
+      <span class="topbar-item hide-mobile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Mon&ndash;Fri, 8am&ndash;5pm
+      </span>
+    </div>
+    <div class="topbar-social">
+      <a href="https://www.instagram.com/twisted_grains.woodworking/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/p/Twisted-Grains-Woodworking-61585344419352/" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="images/logo-mark.png" alt="Twisted Grains Woodworking logo">
+      <span>
+        <span class="mark">Twisted Grains</span>
+        <span class="sub">Woodworking</span>
+      </span>
+    </a>
+    <nav class="main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Our Work</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <a class="nav-link-arrow" href="#visit">
+      Get Directions
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <img src="images/hero.jpg" alt="A handcrafted side table with striking twisted wood grain, handmade by Twisted Grains Woodworking">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Phoenixville, Pennsylvania</p>
+      <h1>Handmade furniture &amp; decor, shaped by <em>nature</em>, built by hand.</h1>
+      <p>Every piece is cut, shaped, and finished in our shop from live-edge and reclaimed wood &mdash; no two are ever the same.</p>
+      <div class="hero-buttons">
+        <a href="#gallery" class="btn btn-primary">See Our Work</a>
+        <a href="#visit" class="link-arrow">
+          Visit the Shop
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-copy">
+        <p class="eyebrow">Our Craft</p>
+        <h2>Built by hand, shaped by nature</h2>
+        <p>Twisted Grains Woodworking is a small, local woodshop specializing in custom furniture, decor, and one-of-a-kind pieces built from live-edge slabs, burls, and reclaimed wood. We let each piece of wood guide the design, highlighting the natural grain, knots, and curves instead of hiding them.</p>
+        <p>From statement coffee tables to hand-carved decor, every item that leaves our shop is made right here in Phoenixville &mdash; built to be the kind of piece you hand down, not replace.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <strong>100%</strong>
+            <span>Handmade</span>
+          </div>
+          <div class="stat">
+            <strong>1 of 1</strong>
+            <span>Every Piece</span>
+          </div>
+          <div class="stat">
+            <strong>Local</strong>
+            <span>Phoenixville, PA</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-img">
+        <img src="images/gallery-07.jpg" alt="Live-edge table crafted from a tree root with a glass top">
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow">Our Work</p>
+        <h2>A gallery of one-of-a-kind pieces</h2>
+        <p>Tables, benches, decor, and sculptural work &mdash; a small sample of what comes out of our shop.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure>
+          <img src="images/gallery-01.jpg" alt="Live-edge console table with a rich burl top" loading="lazy">
+          <figcaption>Live-Edge Console Table</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery-02.jpg" alt="Console table with a dark charred live edge" loading="lazy">
+          <figcaption>Charred-Edge Console Table</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery-03.jpg" alt="Hand-carved wooden walking cane" loading="lazy">
+          <figcaption>Hand-Carved Walking Cane</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery-04.jpg" alt="Live-edge writing desk with a matching handmade chair" loading="lazy">
+          <figcaption>Live-Edge Desk &amp; Chair Set</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery-05.jpg" alt="Matching pair of handmade live-edge benches" loading="lazy">
+          <figcaption>Matching Bench Set</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery-06.jpg" alt="Abstract sculptural wood carving" loading="lazy">
+          <figcaption>Sculptural Wood Art</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery-07.jpg" alt="Tree root table base with a glass top" loading="lazy">
+          <figcaption>Root &amp; Glass Accent Table</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery-08.jpg" alt="Pedestal accent table with resin-inlaid live-edge top" loading="lazy">
+          <figcaption>Resin-Inlay Accent Table</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery-09.jpg" alt="Sculptural handmade wooden guitar stand" loading="lazy">
+          <figcaption>Sculptural Guitar Stand</figcaption>
+        </figure>
+      </div>
+      <p class="gallery-note">See more of our work on <a href="https://www.instagram.com/twisted_grains.woodworking/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/p/Twisted-Grains-Woodworking-61585344419352/" target="_blank" rel="noopener">Facebook</a>.</p>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow">How It&rsquo;s Made</p>
+        <h2>From raw wood to finished piece</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-item">
+          <span class="process-num">01</span>
+          <h3>Sourced &amp; Selected</h3>
+          <p>We hand-pick live-edge slabs, burls, and reclaimed wood for their natural character and grain.</p>
+        </div>
+        <div class="process-item">
+          <span class="process-num">02</span>
+          <h3>Shaped by Hand</h3>
+          <p>Every cut, sand, and finish is done in our shop &mdash; built around the wood, not a template.</p>
+        </div>
+        <div class="process-item">
+          <span class="process-num">03</span>
+          <h3>One of a Kind</h3>
+          <p>The result is a piece of furniture or decor that doesn&rsquo;t exist anywhere else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="visit-details">
+        <p class="eyebrow">Visit Us</p>
+        <h2 style="font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.6vw, 2.8rem); margin-bottom: 8px; letter-spacing: -0.3px;">Stop by the shop</h2>
+
+        <div class="detail-row">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Address</h4>
+            <a href="https://maps.google.com/?q=440+Schuylkill+RD,+Phoenixville,+PA+19460" target="_blank" rel="noopener">440 Schuylkill RD, Phoenixville, PA 19460</a>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>Phone</h4>
+            <a href="tel:+16103426412">(610) 342-6412</a>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6c0-1.1-.9-2-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6z"/><path d="m2 7 10 6 10-6"/></svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:hello@twistedgrainswoodworking.com">hello@twistedgrainswoodworking.com</a>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <h4>Hours</h4>
+            <table class="hours-table">
+              <tr><td>Monday &ndash; Friday</td><td>8:00 AM &ndash; 5:00 PM</td></tr>
+              <tr><td>Saturday &ndash; Sunday</td><td>Closed</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="social-row">
+          <a href="https://www.instagram.com/twisted_grains.woodworking/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/p/Twisted-Grains-Woodworking-61585344419352/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=440%20Schuylkill%20RD%2C%20Phoenixville%2C%20PA%2019460&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Map to Twisted Grains Woodworking, 440 Schuylkill RD, Phoenixville, PA 19460">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <img src="images/logo-mark.png" alt="Twisted Grains Woodworking logo">
+      <span>
+        <span class="mark">Twisted Grains</span>
+        <span class="sub">Woodworking</span>
+      </span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Our Work</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="mailto:hello@twistedgrainswoodworking.com">Email Us</a></li>
+    </ul>
+  </div>
+  <div class="wrap">
+    <p class="footer-bottom">&copy; 2026 Twisted Grains Woodworking &middot; 440 Schuylkill RD, Phoenixville, PA 19460 &middot; (610) 342-6412</p>
+  </div>
+</footer>
+
+</body>
+</html>
